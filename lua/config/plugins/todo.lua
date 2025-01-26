@@ -1,3 +1,4 @@
+---@diagnostic disable: missing-fields
 return {
   "folke/todo-comments.nvim",
   dependencies = { "nvim-lua/plenary.nvim" },
