@@ -21,7 +21,8 @@ return {
         cssls = {},
         rust_analyzer = {},
         jsonls = {},
-        tailwindcss = {}
+        tailwindcss = {},
+        astro = {}
       }
     },
     config = function(_, opts)
