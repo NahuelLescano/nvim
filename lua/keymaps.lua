@@ -15,3 +15,5 @@ vim.keymap.set("n", "<space>st", function ()
 end)
 
 vim.keymap.set("t", "<esc><esc>", "<C-\\><C-n>")
+
+vim.keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>")
