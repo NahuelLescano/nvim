@@ -24,6 +24,7 @@ return {
         tailwindcss = {},
         astro = {},
         bashls = {},
+        pylyzer = {}
       }
     },
     config = function(_, opts)
