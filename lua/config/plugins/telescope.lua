@@ -11,13 +11,22 @@ return {
       pickers = {
         find_files = {
           theme = "ivy",
-          find_files = {
-            hidden = true
-          }
         },
         buffers = {
-          theme = "dropdown",
+          theme = "ivy",
         },
+        grep_string = {
+          theme = "ivy",
+        },
+        help_tags = {
+          theme = "ivy",
+        },
+        keymaps = {
+          theme = "ivy",
+        },
+        git_files = {
+          theme = "ivy",
+        }
       },
       extensions = {
         fzf = {}
@@ -25,9 +34,6 @@ return {
     })
     telescope.load_extension("fzf")
     telescope.load_extension("noice")
-
-    local x = 5
-    print(x)
 
     local builtin = require('telescope.builtin')
     vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
