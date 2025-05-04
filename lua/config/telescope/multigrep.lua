@@ -2,6 +2,7 @@ local pickers = require("telescope.pickers")
 local finders = require("telescope.finders")
 local make_entry = require("telescope.make_entry")
 local conf = require("telescope.config").values
+local themes = require("telescope.themes")
 
 local M = {}
 
@@ -41,7 +42,7 @@ local live_multigrep = function(opts)
   pickers
       .new(opts, {
         debouce = 300,
-        prompt_title = "Live Grep",
+        prompt_title = "Multigrep",
         finder = finder,
         previewer = conf.grep_previewer(opts),
         sorter = require("telescope.sorters").empty(),
