@@ -1,7 +1,8 @@
 return {
   "aznhe21/actions-preview.nvim",
   config = function()
-    require("actions-preview").setup({
+    local actions = require("actions-preview")
+    actions.setup({
       telescope = {
         sorting_strategy = "ascending",
         layout_strategy = "vertical",
@@ -17,6 +18,6 @@ return {
       },
     })
 
-    vim.keymap.set({ "v", "n" }, "gf", require("actions-preview").code_actions)
+    vim.keymap.set({ "v", "n" }, "gf", actions.code_actions)
   end,
 }
