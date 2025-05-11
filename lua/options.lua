@@ -23,3 +23,4 @@ vim.opt.isfname:append("@-@")
 vim.opt.cursorline = true
 
 vim.g.netrw_banner = 0
+vim.opt.termguicolors = true
