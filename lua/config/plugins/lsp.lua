@@ -26,12 +26,12 @@ return {
       ts_ls = {},
       html = {},
       cssls = {},
-      rust_analyzer = {},
       jsonls = {},
       tailwindcss = {},
       astro = {},
       bashls = {},
-      pylyzer = {}
+      pylyzer = {},
+      clangd = {},
     }
   },
   config = function(_, opts)
