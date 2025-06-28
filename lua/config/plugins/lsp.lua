@@ -28,10 +28,15 @@ return {
       cssls = {},
       jsonls = {},
       tailwindcss = {},
-      astro = {},
+      astro_ls = {},
       bashls = {},
-      pylyzer = {},
+      basedpyright = {},
       clangd = {},
+      angularls = {
+        cmd = { "ngserver", "--stdio", "--tsProbeLocations", vim.fn.getcwd(), "--ngProbeLocations", vim.fn.getcwd() },
+      },
+      gopls = {},
+      svelte = {}
     }
   },
   config = function(_, opts)
@@ -44,6 +49,10 @@ return {
         "html",
         "cssls",
       },
+    })
+
+    vim.diagnostic.config({
+      virtual_text = true
     })
 
     local lspconfig = require('lspconfig')
