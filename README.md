@@ -1,28 +1,47 @@
-# NVIM configs
-This is my personal nvim configs.
+# NVIM Configs
 
-## Package manager
-I'm using folke Lazy package manager to install all my plugins
-* [Lazy](https://github.com/folke/lazy.nvim)
+¡Bienvenido a mi configuración personal de Neovim!  
+Acá vas a encontrar todo lo que uso para tener un entorno de desarrollo ágil, minimalista y potente, ideal para frontend, scripting y cualquier cosa que pinte.
 
-## Plugins
-These are all my plugins that I installed
-* [Oil](https://github.com/stevearc/oil.nvim) - A vim-vinegar like file explorer that lets you edit your filesystem like a normal Neovim buffer.
-* [blink.cmp](https://github.com/Saghen/blink.cmp) - Is a completion plugin with support for LSPs and external sources that updates on every keystroke. 
-* [lsp](https://github.com/neovim/nvim-lspconfig) - Nvim supports the Language Server Protocol (LSP), which means it acts as a client to LSP servers and includes a Lua framework vim.lsp for building enhanced LSP tools, but the servers are provided by third parties. You could install lsp's manually or use [meson](https://github.com/williamboman/mason.nvim). I'm using the last.
-* [todo](https://github.com/folke/todo-comments.nvim) - A sweet highlight todo comments like TODO, HACK, BUG, etc...
-* [lualine](https://github.com/nvim-lualine/lualine.nvim) - A blazing fast and easy to configure Neovim statusline written in Lua.
-* [Harpoon 2](https://github.com/ThePrimeagen/harpoon) - Getting you where you want with the fewest keystrokes.
-* [Trouble](https://github.com/folke/trouble.nvim) - A pretty list for showing diagnostics, references, telescope results, quickfix and location lists to help you solve all the trouble your code is causing.
-* [undotree](https://github.com/mbbill/undotree) - A better way to see all your history.
-* [Telescope](https://github.com/nvim-telescope/telescope.nvim) - Move through your project fast. You should use it with fzf.
-* [catppuccin](https://github.com/catppuccin/nvim) - My favorites colorschemes are catppuccin.
-* [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - It gives syntax highlighting on files.
+---
 
-## Other configs
-Beside I have other configurations like:
-* ftplugin - Adds some extra configuration for a type specific file.
-* muligrep - A personal plugin to search something across files in a project. 
-* menu - Costum options on menus. To use it press right click.
+## Package Manager
 
-Those configs was inspired from [TJ's Advent of code videos](https://www.youtube.com/watch?v=WsKSuQSutaI "Great work TJ").
+Uso [Lazy.nvim](https://github.com/folke/lazy.nvim) como gestor de plugins. Es rápido, declarativo y te deja tener todo bajo control sin dramas.
+
+---
+
+## Plugins Principales
+
+Estos son los plugins que tengo instalados y por qué los uso:
+
+- [Oil](https://github.com/stevearc/oil.nvim): Explorador de archivos tipo vim-vinegar, pero más piola. Te deja editar el filesystem como si fuera un buffer más.
+- [blink.cmp](https://github.com/Saghen/blink.cmp): Autocompletado con soporte para LSP y fuentes externas, actualiza en cada tecla.  
+- [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig): Soporte para Language Server Protocol. Uso [mason.nvim](https://github.com/williamboman/mason.nvim) para instalar los servidores fácil.
+- [todo-comments.nvim](https://github.com/folke/todo-comments.nvim): Resalta TODO, HACK, BUG y otros comentarios clave.  
+- [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim): Statusline configurable y rapidísima.
+- [Harpoon 2](https://github.com/ThePrimeagen/harpoon): Navegación ultra rápida entre archivos favoritos.
+- [Trouble.nvim](https://github.com/folke/trouble.nvim): Lista visual para diagnósticos, referencias, quickfix, etc.  
+- [undotree](https://github.com/mbbill/undotree): Visualizá el historial de cambios como corresponde.
+- [Telescope.nvim](https://github.com/nvim-telescope/telescope.nvim): Búsqueda y navegación por el proyecto. Lo uso junto a fzf para máxima velocidad.
+- [catppuccin](https://github.com/catppuccin/nvim): Mi esquema de colores favorito, suave y legible.
+- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter): Highlighting de sintaxis avanzado y parsing inteligente.
+
+---
+
+## Otras Configuraciones
+
+Además, tengo algunos tweaks y plugins propios:
+
+- **ftplugin**: Configuraciones específicas por tipo de archivo.
+- **muligrep**: Plugin personal para buscar en todos los archivos del proyecto.
+- **menu**: Menús contextuales custom, accesibles con click derecho.
+
+---
+
+## Inspiración
+
+Gran parte de esta config está inspirada en los videos de [TJ DeVries (Advent of Code)](https://www.youtube.com/watch?v=WsKSuQSutaI).  
+¡Recomendadísimo si querés aprender a tunear tu Neovim!
+
+Tambien, uso configuraciones del capo de Gentleman Programming.
