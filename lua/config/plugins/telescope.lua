@@ -3,6 +3,7 @@ return {
   tag = '0.1.8',
   dependencies = {
     'nvim-lua/plenary.nvim',
+    'nvim-telescope/telescope-ui-select.nvim',
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
   },
   config = function()
@@ -26,14 +27,18 @@ return {
         },
         git_files = {
           theme = "ivy",
-        }
+        },
+        live_grep = {
+          theme = "ivy",
+        },
       },
       extensions = {
-        fzf = {}
+        fzf = {},
       }
     })
     telescope.load_extension("fzf")
     telescope.load_extension("noice")
+    telescope.load_extension("ui-select")
 
     local builtin = require('telescope.builtin')
     vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
