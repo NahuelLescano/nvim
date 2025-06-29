@@ -60,4 +60,4 @@ end
 
 vim.api.nvim_create_user_command("Floaterm", toggle_term, {})
 
-vim.keymap.set({ "n", "t" }, "<leader>tf", toggle_term)
+vim.keymap.set({ "n", "t" }, "<leader>tf", toggle_term, { desc = "Toggle floating terminal" })
