@@ -28,7 +28,7 @@ return {
       cssls = {},
       jsonls = {},
       tailwindcss = {},
-      astro_ls = {},
+      astro = {},
       bashls = {},
       basedpyright = {},
       clangd = {},
@@ -63,7 +63,7 @@ return {
       lspconfig[server].setup({ config = config, capabilities = capabilities })
     end
 
-    vim.keymap.set("n", "<space>ft", function() vim.lsp.buf.format() end)
+    vim.keymap.set("n", "<space>ft", function() vim.lsp.buf.format() end, { desc = "Format buffer with LSP" })
   end
 
 }
