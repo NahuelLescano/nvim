@@ -55,10 +55,12 @@ return {
       virtual_text = true
     })
 
+    local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
     local lspconfig = require('lspconfig')
     for server, config in pairs(opts.servers) do
       config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
-      lspconfig[server].setup(config)
+      lspconfig[server].setup({ config = config, capabilities = capabilities })
     end
 
     vim.keymap.set("n", "<space>ft", function() vim.lsp.buf.format() end)
