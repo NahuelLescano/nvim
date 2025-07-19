@@ -55,5 +55,15 @@ return {
     vim.keymap.set('n', '<C-p>', builtin.git_files, { desc = 'Search git files' })
 
     require("config.telescope.multigrep").setup()
+
+    vim.keymap.set('n', '<leader>nn', function()
+      require('telescope').extensions.notify.notify({
+        theme = "ivy",
+        layout_config = {
+          width = 0.8,
+          height = 0.8,
+        },
+      })
+    end, { desc = 'Telescope notify' })
   end
 }
