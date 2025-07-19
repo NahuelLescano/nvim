@@ -42,6 +42,24 @@ return {
   config = function(_, opts)
     require("neodev").setup()
 
+    require('render-markdown').setup({
+      completions = { blink = { enabled = true } },
+    })
+
+    vim.api.nvim_create_autocmd("User", {
+      pattern = "BlinkCmpMenuOpen",
+      callback = function()
+        vim.b.copilot_suggestion_hidden = true
+      end,
+    })
+
+    vim.api.nvim_create_autocmd("User", {
+      pattern = "BlinkCmpMenuClose",
+      callback = function()
+        vim.b.copilot_suggestion_hidden = false
+      end,
+    })
+
     require("mason").setup({
       ensure_installed = {
         "lua_ls",
@@ -56,6 +74,7 @@ return {
     })
 
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 
     local lspconfig = require('lspconfig')
     for server, config in pairs(opts.servers) do
