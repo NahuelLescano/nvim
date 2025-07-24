@@ -9,6 +9,7 @@ vim.keymap.set("n", "<M-q>", "<cmd>cclose<CR>", { desc = "Close quickfix window"
 vim.keymap.set("t", "<esc><esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 vim.keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noice notifications" })
 vim.keymap.set("n", "<leader>cc", "<cmd>CopilotChat<CR>", { desc = "Open Copilot Chat" })
+vim.keymap.set("n", "<leader>bd", "<cmd>%bd|e#<CR>", { desc = "Close all buffers except current" })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yaking (copying) text",
