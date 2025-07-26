@@ -12,33 +12,7 @@ return {
       },
     },
   },
-  opts = {
-    servers = {
-      lua_ls = {
-        settings = {
-          Lua = {
-            completion = {
-              callSnippet = "Replace"
-            }
-          }
-        }
-      },
-      ts_ls = {},
-      html = {},
-      cssls = {},
-      jsonls = {},
-      tailwindcss = {},
-      astro = {},
-      bashls = {},
-      basedpyright = {},
-      clangd = {},
-      angularls = {
-        cmd = { "ngserver", "--stdio", "--tsProbeLocations", vim.fn.getcwd(), "--ngProbeLocations", vim.fn.getcwd() },
-      },
-      gopls = {},
-      svelte = {}
-    }
-  },
+
   config = function(_, opts)
     require("neodev").setup()
 
@@ -73,14 +47,39 @@ return {
       virtual_text = true
     })
 
-    local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-
+    local capabilities = require('blink.cmp').get_lsp_capabilities()
     local lspconfig = require('lspconfig')
-    for server, config in pairs(opts.servers) do
-      config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
-      lspconfig[server].setup({ config = config, capabilities = capabilities })
-    end
+    lspconfig['lua_ls'].setup({
+      capabilities = capabilities,
+      settings = {
+        Lua = {
+          diagnostics = {
+            globals = { "vim" }
+          },
+        }
+      }
+    })
+
+    lspconfig['ts_ls'].setup({ capabilities = capabilities })
+    lspconfig['html'].setup({ capabilities = capabilities })
+    lspconfig['cssls'].setup({ capabilities = capabilities })
+    lspconfig['jsonls'].setup({ capabilities = capabilities })
+    lspconfig['tailwindcss'].setup({
+      capabilities = capabilities,
+      filetypes = { "html", "javascript", "typescript", "astro", "vue", "svelte" }
+    })
+    lspconfig['astro'].setup({
+      capabilities = capabilities,
+      settings = {
+        astro = {
+          filetypes = { "astro", "html" },
+          enable = true,
+        }
+      }
+    })
+    lspconfig['bashls'].setup({ capabilities = capabilities })
+    lspconfig['basedpyright'].setup({ capabilities = capabilities })
 
     vim.keymap.set("n", "<space>ft", function() vim.lsp.buf.format() end, { desc = "Format buffer with LSP" })
   end
