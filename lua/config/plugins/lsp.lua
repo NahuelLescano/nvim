@@ -13,7 +13,7 @@ return {
     },
   },
 
-  config = function(_, opts)
+  config = function()
     require("neodev").setup()
 
     require('render-markdown').setup({
