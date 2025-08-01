@@ -82,6 +82,7 @@ return {
     lspconfig['bashls'].setup({ capabilities = capabilities })
     lspconfig['basedpyright'].setup({ capabilities = capabilities })
     lspconfig['clangd'].setup({ capabilities = capabilities })
+    lspconfig['gopls'].setup({ capabilities = capabilities })
 
     vim.keymap.set("n", "<space>ft", function() vim.lsp.buf.format() end, { desc = "Format buffer with LSP" })
   end
