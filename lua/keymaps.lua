@@ -12,16 +12,16 @@ vim.keymap.set("n", "<leader>cc", "<cmd>CopilotChat<CR>", { desc = "Open Copilot
 vim.keymap.set("n", "<leader>bd", "<cmd>%bd|e#<CR>", { desc = "Close all buffers except current" })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
-  desc = "Highlight when yaking (copying) text",
-  group = vim.api.nvim_create_augroup("Yanking-highlight", { clear = true }),
-  callback = function()
-    vim.hl.on_yank()
-  end,
+	desc = "Highlight when yaking (copying) text",
+	group = vim.api.nvim_create_augroup("Yanking-highlight", { clear = true }),
+	callback = function()
+		vim.hl.on_yank()
+	end,
 })
 
-vim.keymap.set("n", "<space>st", function ()
-    vim.cmd.vnew()
-    vim.cmd.term()
-    vim.cmd.wincmd("J")
-    vim.api.nvim_win_set_height(0, 15)
+vim.keymap.set("n", "<space>st", function()
+	vim.cmd.vnew()
+	vim.cmd.term()
+	vim.cmd.wincmd("J")
+	vim.api.nvim_win_set_height(0, 15)
 end, { desc = "Open terminal in split" })

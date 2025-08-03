@@ -12,27 +12,27 @@ vim.cmd([[
 local group = vim.api.nvim_create_augroup("nvim_popupmenu", { clear = true })
 
 vim.api.nvim_create_autocmd("MenuPopup", {
-  pattern = "*",
-  group = group,
-  desc = "Costum PopUp menu",
-  callback = function()
-    vim.cmd([[
+	pattern = "*",
+	group = group,
+	desc = "Costum PopUp menu",
+	callback = function()
+		vim.cmd([[
       amenu disable PopUp.Definition
       amenu disable PopUp.References
       amenu disable PopUp.URL
     ]])
 
-    local client = vim.lsp.get_clients({ bufnr = 0 })[1]
-    if client then
-      vim.cmd([[
+		local client = vim.lsp.get_clients({ bufnr = 0 })[1]
+		if client then
+			vim.cmd([[
         amenu enable PopUp.Definition
         amenu enable PopUp.References
       ]])
-    end
+		end
 
-    local urls = require("vim.ui")._get_urls()
-    if vim.startswith(urls[1], "http") then
-      vim.cmd([[ amenu enable PopUp.URL ]])
-    end
-  end
+		local urls = require("vim.ui")._get_urls()
+		if vim.startswith(urls[1], "http") then
+			vim.cmd([[ amenu enable PopUp.URL ]])
+		end
+	end,
 })
