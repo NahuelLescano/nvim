@@ -3,6 +3,8 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
 	config = function()
+    vim.cmd [[hi @tag.astro guifg=darkpink]]
+
 		require("nvim-treesitter.configs").setup({
 			ensure_installed = {
 				"c",
