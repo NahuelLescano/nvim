@@ -9,17 +9,21 @@ vim.keymap.set("n", "<M-q>", "<cmd>cclose<CR>", { desc = "Close quickfix window"
 vim.keymap.set("t", "<esc><esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 vim.keymap.set("n", "<leader>bd", "<cmd>%bd|e#<CR>", { desc = "Close all buffers except current" })
 
-vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yaking (copying) text",
-	group = vim.api.nvim_create_augroup("Yanking-highlight", { clear = true }),
-	callback = function()
-		vim.hl.on_yank()
-	end,
-})
+vim.keymap.set("n", "<leader>td", function()
+  vim.cmd("LspStop")
+  vim.cmd("Copilot disable")
+  print("Copilot and LSP disabled")
+end, { desc = "Toggle disable LSP and Copilot" })
+
+vim.keymap.set("n", "<leader>te", function()
+  vim.cmd("LspStart")
+  vim.cmd("Copilot enable")
+  print("LSP and Copilot enabled")
+end, { desc = "Toggle enable LSP and Copilot" })
 
 vim.keymap.set("n", "<space>st", function()
-	vim.cmd.vnew()
-	vim.cmd.term()
-	vim.cmd.wincmd("J")
-	vim.api.nvim_win_set_height(0, 15)
+  vim.cmd.vnew()
+  vim.cmd.term()
+  vim.cmd.wincmd("J")
+  vim.api.nvim_win_set_height(0, 15)
 end, { desc = "Open terminal in split" })
