@@ -10,13 +10,11 @@ vim.keymap.set("t", "<esc><esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }
 vim.keymap.set("n", "<leader>bd", "<cmd>%bd|e#<CR>", { desc = "Close all buffers except current" })
 
 vim.keymap.set("n", "<leader>td", function()
-  vim.cmd("LspStop")
   vim.cmd("Copilot disable")
   print("Copilot and LSP disabled")
 end, { desc = "Toggle disable LSP and Copilot" })
 
 vim.keymap.set("n", "<leader>te", function()
-  vim.cmd("LspStart")
   vim.cmd("Copilot enable")
   print("LSP and Copilot enabled")
 end, { desc = "Toggle enable LSP and Copilot" })
