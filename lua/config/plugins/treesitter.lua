@@ -8,6 +8,7 @@ return {
 
     vim.cmd([[hi @tag.builtin.javascript guifg=pink]])
     vim.cmd([[hi @tag.javascript guifg=pink]])
+    vim.cmd([[hi @tag.html guifg=darkpink]])
 
     require("nvim-treesitter.configs").setup({
       ensure_installed = {
