@@ -11,12 +11,12 @@ vim.keymap.set("n", "<leader>bd", "<cmd>%bd|e#<CR>", { desc = "Close all buffers
 
 vim.keymap.set("n", "<leader>td", function()
   vim.cmd("Copilot disable")
-  print("Copilot and LSP disabled")
+  print("Copilot disabled")
 end, { desc = "Toggle disable LSP and Copilot" })
 
 vim.keymap.set("n", "<leader>te", function()
   vim.cmd("Copilot enable")
-  print("LSP and Copilot enabled")
+  print("Copilot enabled")
 end, { desc = "Toggle enable LSP and Copilot" })
 
 vim.keymap.set("n", "<space>st", function()
