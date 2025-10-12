@@ -13,8 +13,8 @@ return {
 				null_ls.builtins.formatting.black.with({
 					extra_args = { "--fast" },
 				}),
-				null_ls.builtins.formatting.prettierd,
 				null_ls.builtins.formatting.biome,
+				require("none-ls.formatting.eslint_d"),
 				null_ls.builtins.formatting.shfmt,
 			},
 		})
