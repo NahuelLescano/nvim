@@ -15,6 +15,7 @@ return {
 				}),
 				null_ls.builtins.formatting.biome,
 				require("none-ls.formatting.eslint_d"),
+				require("none-ls.diagnostics.eslint_d"),
 				null_ls.builtins.formatting.shfmt,
 			},
 		})
