@@ -83,6 +83,7 @@ return {
 		lspconfig["basedpyright"].setup({ capabilities = capabilities })
 		lspconfig["clangd"].setup({ capabilities = capabilities })
 		lspconfig["gopls"].setup({ capabilities = capabilities })
+		lspconfig["tailwindcss"].setup({ capabilities = capabilities })
 
 		vim.keymap.set("n", "<space>ft", function()
 			vim.lsp.buf.format()
