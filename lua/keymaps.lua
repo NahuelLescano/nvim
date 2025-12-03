@@ -1,13 +1,22 @@
 vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<CR>", { desc = "Source current file" })
 vim.keymap.set("n", "<leader>x", "<cmd>:lua .<CR>", { desc = "Run current file" })
 vim.keymap.set("v", "<leader>x", "<cmd>:lua .<CR>", { desc = "Run selected code" })
+
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected lines up" })
+
+vim.keymap.set("n", "<C-j>", ":m .+1<CR>>==", { desc = "Move current line down" })
+vim.keymap.set("n", "<C-k>", ":m .-2<CR>>==", { desc = "Move current line up" })
+
 vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>", { desc = "Next quickfix item" })
 vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>", { desc = "Previous quickfix item" })
 vim.keymap.set("n", "<M-q>", "<cmd>cclose<CR>", { desc = "Close quickfix window" })
-vim.keymap.set("t", "<esc><esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
 vim.keymap.set("n", "<leader>bd", "<cmd>%bd|e#<CR>", { desc = "Close all buffers except current" })
+
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
+
+vim.keymap.set("t", "<esc><esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 vim.keymap.set("n", "<leader>td", function()
 	vim.cmd("Copilot disable")
