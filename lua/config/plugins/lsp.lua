@@ -67,7 +67,7 @@ return {
 		vim.lsp.config.cssls = {}
 		vim.lsp.config.jsonls = {}
 		vim.lsp.config.tailwindcss = {
-			filetypes = { "html", "javascript", "typescript", "astro", "vue" },
+			filetypes = { "html", "javascript", "typescript", "typescriptreact", "javascriptreact", "astro", "vue" },
 		}
 		vim.lsp.config.astro = {
 			settings = {
