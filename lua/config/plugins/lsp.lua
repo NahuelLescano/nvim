@@ -4,7 +4,6 @@ return {
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"folke/lazydev.nvim",
-		"folke/neodev.nvim",
 		ft = "lua",
 		opts = {
 			library = {
@@ -14,8 +13,6 @@ return {
 	},
 
 	config = function()
-		require("neodev").setup()
-
 		require("render-markdown").setup({
 			completions = { blink = { enabled = true } },
 		})
@@ -50,9 +47,12 @@ return {
 		})
 
 		local capabilities = require("blink.cmp").get_lsp_capabilities()
-		local lspconfig = require("lspconfig")
-		lspconfig["lua_ls"].setup({
+
+		vim.lsp.config("*", {
 			capabilities = capabilities,
+		})
+
+		vim.lsp.config.lua_ls = {
 			settings = {
 				Lua = {
 					diagnostics = {
@@ -60,30 +60,41 @@ return {
 					},
 				},
 			},
-		})
+		}
 
-		lspconfig["vtsls"].setup({ capabilities = capabilities })
-		lspconfig["html"].setup({ capabilities = capabilities })
-		lspconfig["cssls"].setup({ capabilities = capabilities })
-		lspconfig["jsonls"].setup({ capabilities = capabilities })
-		lspconfig["tailwindcss"].setup({
-			capabilities = capabilities,
+		vim.lsp.config.vtsls = {}
+		vim.lsp.config.html = {}
+		vim.lsp.config.cssls = {}
+		vim.lsp.config.jsonls = {}
+		vim.lsp.config.tailwindcss = {
 			filetypes = { "html", "javascript", "typescript", "astro", "vue" },
-		})
-		lspconfig["astro"].setup({
-			capabilities = capabilities,
+		}
+		vim.lsp.config.astro = {
 			settings = {
 				astro = {
 					filetypes = { "astro", "html" },
 					enable = true,
 				},
 			},
+		}
+		vim.lsp.config.bashls = {}
+		vim.lsp.config.basedpyright = {}
+		vim.lsp.config.clangd = {}
+		vim.lsp.config.gopls = {}
+
+		vim.lsp.enable({
+			"lua_ls",
+			"vtsls",
+			"html",
+			"cssls",
+			"jsonls",
+			"tailwindcss",
+			"astro",
+			"bashls",
+			"basedpyright",
+			"clangd",
+			"gopls",
 		})
-		lspconfig["bashls"].setup({ capabilities = capabilities })
-		lspconfig["basedpyright"].setup({ capabilities = capabilities })
-		lspconfig["clangd"].setup({ capabilities = capabilities })
-		lspconfig["gopls"].setup({ capabilities = capabilities })
-		lspconfig["tailwindcss"].setup({ capabilities = capabilities })
 
 		vim.keymap.set("n", "<space>ft", function()
 			vim.lsp.buf.format()
