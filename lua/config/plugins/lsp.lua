@@ -44,11 +44,14 @@ return {
 
 		vim.diagnostic.config({
 			virtual_text = true,
+			spacing = 4,
+			source = "if_many",
+			prefix = "●",
 		})
 
 		local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-		vim.lsp.config('*', {
+		vim.lsp.config("*", {
 			capabilities = capabilities,
 		})
 
