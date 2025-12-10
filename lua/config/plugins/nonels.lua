@@ -14,8 +14,23 @@ return {
 					extra_args = { "--fast" },
 				}),
 				null_ls.builtins.formatting.biome,
-				require("none-ls.formatting.eslint_d"),
-				require("none-ls.diagnostics.eslint_d"),
+				null_ls.builtins.formatting.eslint.with({
+					command = "bunx",
+					args = { "eslint", "--fix", "--stdin", "--stdin-filename", "$FILENAME", "--config", "eslint.config.js" },
+				}),
+				null_ls.builtins.diagnostics.eslint.with({
+					command = "bunx",
+					args = {
+						"eslint",
+						"--format",
+						"unix",
+						"--stdin",
+						"--stdin-filename",
+						"$FILENAME",
+						"--config",
+						"eslint.config.js",
+					},
+				}),
 				null_ls.builtins.formatting.shfmt,
 			},
 		})
