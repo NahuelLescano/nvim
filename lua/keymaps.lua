@@ -7,6 +7,8 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected lines up" }
 vim.keymap.set("n", "<M-j>", ":m .+1<CR>>==", { desc = "Move current line down" })
 vim.keymap.set("n", "<M-k>", ":m .-2<CR>>==", { desc = "Move current line up" })
 
+vim.keymap.set("v", "<leader>ss", 'y/\\V<C-R>"<CR>', { noremap = true, silent = true, desc = "Search for selected text" })
+
 vim.keymap.set("n", "<M-J>", "<cmd>cnext<CR>", { desc = "Next quickfix item" })
 vim.keymap.set("n", "<M-K>", "<cmd>cprev<CR>", { desc = "Previous quickfix item" })
 vim.keymap.set("n", "<M-q>", "<cmd>cclose<CR>", { desc = "Close quickfix window" })
@@ -22,12 +24,14 @@ vim.keymap.set("n", "<leader>bp", "<cmd>bprevious<CR>", { desc = "Previous buffe
 
 vim.keymap.set("n", "<leader>td", function()
 	vim.cmd("Copilot disable")
-	print("Copilot disabled")
+	vim.cmd("LspStop")
+	print("Copilot and lsp disable")
 end, { desc = "Toggle disable LSP and Copilot" })
 
 vim.keymap.set("n", "<leader>te", function()
 	vim.cmd("Copilot enable")
-	print("Copilot enabled")
+	vim.cmd("LspStart")
+	print("Copilot and lsp enable")
 end, { desc = "Toggle enable LSP and Copilot" })
 
 vim.keymap.set("n", "<space>st", function()
@@ -36,4 +40,3 @@ vim.keymap.set("n", "<space>st", function()
 	vim.cmd.wincmd("J")
 	vim.api.nvim_win_set_height(0, 10)
 end, { desc = "Open terminal in split" })
-
