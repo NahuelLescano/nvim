@@ -7,8 +7,6 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected lines up" }
 vim.keymap.set("n", "<M-j>", ":m .+1<CR>>==", { desc = "Move current line down" })
 vim.keymap.set("n", "<M-k>", ":m .-2<CR>>==", { desc = "Move current line up" })
 
-vim.keymap.set("v", "<leader>ss", 'y/\\V<C-R>"<CR>', { noremap = true, silent = true, desc = "Search for selected text" })
-
 vim.keymap.set("n", "<M-J>", "<cmd>cnext<CR>", { desc = "Next quickfix item" })
 vim.keymap.set("n", "<M-K>", "<cmd>cprev<CR>", { desc = "Previous quickfix item" })
 vim.keymap.set("n", "<M-q>", "<cmd>cclose<CR>", { desc = "Close quickfix window" })
