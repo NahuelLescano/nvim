@@ -20,6 +20,16 @@ vim.keymap.set("t", "<esc><esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }
 vim.keymap.set("n", "<leader>bn", "<cmd>bnext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<leader>bp", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
 
+vim.keymap.set("n", "<leader>tce", function()
+  vim.cmd("Copilot toggle")
+  print("Toggled Copilot")
+end, { desc = "Toggle Copilot" })
+
+vim.keymap.set("n", "<leader>tcd", function()
+  vim.cmd("Copilot disable")
+  print("Disable Copilot")
+end, { desc = "Disable Copilot" })
+
 vim.keymap.set("n", "<leader>td", function()
 	vim.cmd("Copilot disable")
 	vim.cmd("LspStop")
