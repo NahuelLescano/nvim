@@ -32,7 +32,7 @@ end, { desc = "Disable Copilot" })
 
 vim.keymap.set("n", "<leader>td", function()
 	vim.cmd("Copilot disable")
-	vim.cmd("LspStop")
+	vim.cmd("lsp stop")
 	print("Copilot and lsp disable")
 end, { desc = "Toggle disable LSP and Copilot" })
 
