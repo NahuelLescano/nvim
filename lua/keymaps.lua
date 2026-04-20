@@ -20,6 +20,10 @@ vim.keymap.set("t", "<esc><esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }
 vim.keymap.set("n", "<leader>bn", "<cmd>bnext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<leader>bp", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
 
+vim.keymap.set("n", "<leader>tt", "<cmd>TransparentToggle<CR>", {
+  desc = "Toggle Transparent Background",
+})
+
 vim.keymap.set("n", "<leader>tce", function()
   vim.cmd("Copilot toggle")
   print("Toggled Copilot")
@@ -31,20 +35,20 @@ vim.keymap.set("n", "<leader>tcd", function()
 end, { desc = "Disable Copilot" })
 
 vim.keymap.set("n", "<leader>td", function()
-	vim.cmd("Copilot disable")
-	vim.cmd("lsp stop")
-	print("Copilot and lsp disable")
+  vim.cmd("Copilot disable")
+  vim.cmd("lsp stop")
+  print("Copilot and lsp disable")
 end, { desc = "Toggle disable LSP and Copilot" })
 
 vim.keymap.set("n", "<leader>te", function()
-	vim.cmd("Copilot enable")
-	vim.cmd("LspStart")
-	print("Copilot and lsp enable")
+  vim.cmd("Copilot enable")
+  vim.cmd("LspStart")
+  print("Copilot and lsp enable")
 end, { desc = "Toggle enable LSP and Copilot" })
 
 vim.keymap.set("n", "<space>st", function()
-	vim.cmd.vnew()
-	vim.cmd.term()
-	vim.cmd.wincmd("J")
-	vim.api.nvim_win_set_height(0, 10)
+  vim.cmd.vnew()
+  vim.cmd.term()
+  vim.cmd.wincmd("J")
+  vim.api.nvim_win_set_height(0, 10)
 end, { desc = "Open terminal in split" })

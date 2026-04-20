@@ -22,11 +22,6 @@ return {
           command = "bunx",
           args = {
             "eslint",
-            "--format",
-            "unix",
-            "--stdin",
-            "--stdin-filename",
-            "$FILENAME",
             "--config",
             "eslint.config.js",
           },

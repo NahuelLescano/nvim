@@ -13,9 +13,9 @@ return {
   },
 
   config = function()
-    require("render-markdown").setup({
-      completions = { blink = { enabled = true } },
-    })
+    -- require("render-markdown").setup({
+    --   completions = { blink = { enabled = true } },
+    -- })
 
     vim.api.nvim_create_autocmd("User", {
       pattern = "BlinkCmpMenuOpen",

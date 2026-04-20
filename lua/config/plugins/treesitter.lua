@@ -1,4 +1,3 @@
----@diagnostic disable: missing-fields, undefined-field
 return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
