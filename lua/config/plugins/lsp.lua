@@ -13,9 +13,6 @@ return {
   },
 
   config = function()
-    -- require("render-markdown").setup({
-    --   completions = { blink = { enabled = true } },
-    -- })
 
     vim.api.nvim_create_autocmd("User", {
       pattern = "BlinkCmpMenuOpen",
@@ -96,8 +93,5 @@ return {
       "gopls",
     })
 
-    vim.keymap.set("n", "<space>ft", function()
-      vim.lsp.buf.format()
-    end, { desc = "Format buffer with LSP" })
   end,
 }

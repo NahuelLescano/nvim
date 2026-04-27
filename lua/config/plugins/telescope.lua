@@ -34,7 +34,7 @@ return {
       builtin.grep_string({ search = vim.fn.input("Grep > ") })
     end, { desc = "Grep for user input" })
 
-    require("config.telescope.multigrep").setup()
+    -- require("config.telescope.multigrep").setup()
 
     vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })
     vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "none" })

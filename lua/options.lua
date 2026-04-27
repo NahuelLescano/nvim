@@ -36,3 +36,4 @@ opts.inccommand = "split"
 opts.undofile = true
 
 opts.termguicolors = true
+opts.colorcolumn = "80"
