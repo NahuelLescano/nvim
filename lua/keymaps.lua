@@ -37,5 +37,3 @@ set("n", "<leader>tt", "<cmd>TransparentToggle<CR>", {
 set("n", "<leader>ft", function()
 	vim.lsp.buf.format()
 end, { desc = "Format buffer with LSP" })
-
-set("n", "<leader>/", "*", { desc = "Search word under cursor" })
