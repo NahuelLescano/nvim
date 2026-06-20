@@ -12,6 +12,7 @@ return {
 			["help"] = false,
 			["TelescopePrompt"] = false,
 			["NvimTree"] = false,
+			["oils"] = false,
 		}
 	end,
 }
